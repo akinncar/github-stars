@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "server": "yarn --cwd ./packages/server dev",
-    "client": "yarn --cwd ./packages/client start",
+    "web": "yarn --cwd ./packages/web start",
     "test": "jest"
   },
   "workspaces": {
