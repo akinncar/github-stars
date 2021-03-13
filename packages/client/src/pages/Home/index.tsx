@@ -1,9 +1,41 @@
-import { Container } from './styles';
+import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+
+import Logo from '../../components/Logo';
+import ThemeToggle from '../../components/ThemeToggle';
+import TextInput from '../../components/TextInput';
+import Button from '../../components/Button';
+
+import { Container, Content } from './styles';
+import 'react-toggle/style.css';
 
 const Home = () => {
+  const history = useHistory();
+
+  const [username, setUsername] = useState('akinncar');
+
+  function handleSearch() {
+    console.log('herwe');
+    history.push(`/repositories/${username}`);
+  }
+
   return (
     <Container>
-      <p>Brainn</p>
+      <Logo />
+      <ThemeToggle />
+
+      <Content>
+        <div>
+          <p>https://github.com/</p>
+          <TextInput
+            value={username}
+            onChange={e => setUsername(e.target.value)}
+          />
+        </div>
+        <div>
+          <Button onClick={handleSearch}>Search Repositories</Button>
+        </div>
+      </Content>
     </Container>
   );
 };

@@ -15,9 +15,18 @@ export default createGlobalStyle`
     align-items: center;
     -webkit-font-smoothing: antialiased
   }
-  body, input, button, textarea, h1 {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";  }
+  body, input, button, textarea {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  }
   button {
     cursor: pointer;
+  }
+
+  .react-toggle--checked .react-toggle-track {
+    background-color: #4D4D4D;
+  }
+
+  .react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
+    background-color: #000000;
   }
 `;

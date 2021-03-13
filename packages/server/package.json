@@ -19,7 +19,7 @@
     "mongoose": "^5.12.0",
     "rimraf": "^3.0.2",
     "uuid": "^8.3.2",
-    "webpack": "^5.25.0"
+    "ts-node": "^9.1.1"
   },
   "devDependencies": {
     "@types/cors": "^2.8.10",
@@ -32,7 +32,6 @@
     "@types/koa__cors": "^3.0.2",
     "@types/koa__router": "^8.0.4",
     "@types/mongoose": "^5.10.3",
-    "ts-node": "^9.1.1",
     "ts-node-dev": "^1.1.6"
   }
 }

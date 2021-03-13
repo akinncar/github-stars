@@ -32,6 +32,7 @@ export const connectDatabase = () =>
     mongoose.connect(config.MONGO_URI, {
       useNewUrlParser: true,
       useCreateIndex: true,
-      useUnifiedTopology: true
+      useUnifiedTopology: true,
+      useFindAndModify: false
     });
   });

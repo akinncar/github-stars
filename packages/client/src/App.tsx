@@ -1,10 +1,8 @@
 import GlobalStyle from './styles/global';
 import Routes from './routes';
-import Theme from './styles/Theme';
+import Theme from './contexts/Theme';
 
 const App = () => {
-  console.log('ops');
-
   return (
     <Theme>
       <GlobalStyle />
