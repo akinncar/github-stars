@@ -5,8 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev src/index.ts",
-    "start": "npm run build && node ./dist/index.js",
-    "build": "rimraf ./dist && tsc"
+    "build": "rimraf ./dist && tsc && node ./dist/index.js"
   },
   "dependencies": {
     "@koa/cors": "^3.1.0",
