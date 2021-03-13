@@ -2,7 +2,10 @@ import Koa from 'koa';
 import bodyParser from 'koa-bodyparser';
 import cors from '@koa/cors';
 import Router from '@koa/router';
-import { repositoriesGet } from './modules/repositories/repositoriesGet';
+
+import { repositoryGet } from './modules/repositories/repositoryGet';
+import { repositoryTagPatch } from './modules/repositories/repositoryTagPatch';
+import { repositoryTagDelete } from './modules/repositories/repositoryTagDelete';
 
 const app = new Koa();
 const router = new Router();
@@ -11,13 +14,20 @@ app.use(bodyParser());
 app.use(cors({ maxAge: 86400, credentials: true }));
 
 router.get('/', ctx => {
-  const info = ['GET  / - repositoriesGet/:username'];
+  const info = [
+    'GET  / - repositoriesGet/:username',
+    'POST  / - tags',
+    'PATCH  / - repositoryTagPatch',
+    'DELETE  / - repositoryTagDelete'
+  ];
 
   ctx.status = 200;
   ctx.body = info.join('\n');
 });
 
-router.get('/repositoriesGet/:username', repositoriesGet);
+router.get('/repositoryGet/:username', repositoryGet);
+router.patch('/repositoryTagPatch', repositoryTagPatch);
+router.delete('/repositoryTagDelete/:id/:tag', repositoryTagDelete);
 
 app.use(router.routes()).use(router.allowedMethods());
 
