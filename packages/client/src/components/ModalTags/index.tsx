@@ -34,7 +34,7 @@ export default function ModalTags({ modalIsOpen, closeModal, tags }) {
           </TagContainer>
         </Content>
         <Footer>
-          <Button type="primary">Save changes</Button>
+          <Button variant="primary">Save changes</Button>
         </Footer>
       </Container>
     </Modal>

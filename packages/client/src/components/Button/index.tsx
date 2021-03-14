@@ -2,14 +2,14 @@ import { Btn } from './styles';
 
 interface ButtonProps {
   children: string;
-  type: 'primary' | 'secondary';
+  variant: 'primary' | 'secondary';
   rest?: any;
 }
 
-const Button = ({ children, type, ...rest }: ButtonProps) => {
+const Button = ({ children, variant, ...rest }: ButtonProps) => {
   return (
     <>
-      <Btn type={type} {...rest}>
+      <Btn variant={variant} {...rest}>
         {children}
       </Btn>
     </>

@@ -1,7 +1,7 @@
 import styled, { ThemedStyledProps } from 'styled-components';
 
 interface BtnProps {
-  type: string;
+  variant: string;
 }
 
 export const Btn = styled.button<BtnProps>`

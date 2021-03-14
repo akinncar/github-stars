@@ -32,7 +32,7 @@ const Home = () => {
           />
         </div>
         <div>
-          <Button type="primary" onClick={handleSearch}>
+          <Button variant="primary" onClick={handleSearch}>
             Search Repositories
           </Button>
         </div>
