@@ -1,9 +1,17 @@
 import { Btn } from './styles';
 
-const Button = ({ children, ...rest }) => {
+interface ButtonProps {
+  children: string;
+  type: 'primary' | 'secondary';
+  rest?: any;
+}
+
+const Button = ({ children, type, ...rest }: ButtonProps) => {
   return (
     <>
-      <Btn {...rest}>{children}</Btn>
+      <Btn type={type} {...rest}>
+        {children}
+      </Btn>
     </>
   );
 };

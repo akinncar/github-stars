@@ -1,9 +1,28 @@
+import { useState } from 'react';
+
+import ModalTags from '../ModalTags';
 import Tag from '../Tag';
 import { Container, TagContainer } from './styles';
 
 const RepositoryList = ({ repositories }) => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [modalTags, setModalTags] = useState([]);
+
+  function handleOpenModal(tags) {
+    setModalTags(tags);
+    setModalIsOpen(true);
+  }
+
   return (
     <Container>
+      <ModalTags
+        modalIsOpen={modalIsOpen}
+        tags={modalTags}
+        closeModal={() => {
+          setModalIsOpen(false);
+        }}
+      />
+
       <tr>
         <th>Repository</th>
         <th>Description</th>
@@ -25,7 +44,13 @@ const RepositoryList = ({ repositories }) => {
               </TagContainer>
             </td>
             <td>
-              <button>edit</button>
+              <button
+                onClick={() => {
+                  handleOpenModal(repository.tags);
+                }}
+              >
+                edit
+              </button>
             </td>
           </tr>
         );

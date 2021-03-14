@@ -1,6 +1,10 @@
-import styled from 'styled-components';
+import styled, { ThemedStyledProps } from 'styled-components';
 
-export const Btn = styled.button`
+interface BtnProps {
+  type: string;
+}
+
+export const Btn = styled.button<BtnProps>`
   background-color: ${props => props.theme.colors.button.background.primary};
   color: ${props => props.theme.colors.button.text.primary};
   padding: 6px 14px;

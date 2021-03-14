@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useState } from 'react';
 import { ThemeProvider as StyledProvider } from 'styled-components';
 
 import { ThemeContextData } from '../types/ThemeTypes';
@@ -14,10 +14,6 @@ const ThemeProvider = ({ children }) => {
     localStorage.getItem('@GithubStars:theme') || 'light'
   );
 
-  useEffect(() => {
-    console.log(theme);
-  }, [theme]);
-
   function changeTheme() {
     if (theme === 'light') {
       localStorage.setItem('@GithubStars:theme', 'dark');
@@ -28,11 +24,20 @@ const ThemeProvider = ({ children }) => {
     return setTheme('light');
   }
 
+  function getCurrentTheme() {
+    if (theme === 'light') {
+      return light;
+    }
+
+    return dark;
+  }
+
   return (
-    <StyledProvider theme={theme === 'light' ? light : dark}>
+    <StyledProvider theme={getCurrentTheme()}>
       <ThemeContext.Provider
         value={{
-          changeTheme
+          changeTheme,
+          getCurrentTheme
         }}
       >
         {children}

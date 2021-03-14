@@ -9,13 +9,6 @@ export const Container = styled.div`
   padding: 24px;
   background: ${props => props.theme.colors.background.primary};
   height: 100vh;
-
-  button {
-    background: transparent;
-    border: none;
-    font-weight: 500;
-    color: ${props => props.theme.colors.text.link};
-  }
 `;
 
 export const Header = styled.div`
@@ -23,4 +16,11 @@ export const Header = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+
+  > button {
+    background: transparent;
+    border: none;
+    font-weight: 500;
+    color: ${props => props.theme.colors.text.link};
+  }
 `;

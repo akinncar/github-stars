@@ -1,4 +1,6 @@
-export const light = {
+import { ThemeType } from '../../types/ThemeTypes';
+
+export const light: ThemeType = {
   colors: {
     primary: '#000000',
     secondary: '#36313D',
@@ -17,7 +19,8 @@ export const light = {
       primary: '#000',
       secondary: '#24292e',
       link: '#0366d6',
-      title: '#000'
+      title: '#000',
+      span: '#6a737d'
     },
 
     tag: {
@@ -39,11 +42,12 @@ export const light = {
       border: {
         primary: '#298545'
       }
+    },
+
+    modal: {
+      background: 'rgba(0, 0, 0, 0.5)',
+      contentBackground: '#fafbfc',
+      headerBackground: '#F6F8FA'
     }
-  },
-  fontSizes: {
-    small: '1em',
-    medium: '2em',
-    large: '3em'
   }
 };

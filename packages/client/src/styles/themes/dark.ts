@@ -1,4 +1,6 @@
-export const dark = {
+import { ThemeType } from '../../types/ThemeTypes';
+
+export const dark: ThemeType = {
   colors: {
     primary: '#ffffff',
     secondary: '#36313D',
@@ -17,7 +19,8 @@ export const dark = {
       primary: '#c9d1d9',
       secondary: '#24292e',
       link: '#58a6ff',
-      title: '#ffffff'
+      title: '#ffffff',
+      span: '#8b949e'
     },
 
     tag: {
@@ -31,7 +34,7 @@ export const dark = {
         primary: '#2ea44f'
       },
       backgroundFocus: {
-        primary: '#2a9b4a'
+        primary: '#35b157'
       },
       text: {
         primary: '#FFF'
@@ -39,11 +42,12 @@ export const dark = {
       border: {
         primary: '#298545'
       }
+    },
+
+    modal: {
+      background: 'rgba(0, 0, 0, 0.5)',
+      contentBackground: '#161B22',
+      headerBackground: '#090D13'
     }
-  },
-  fontSizes: {
-    small: '1em',
-    medium: '2em',
-    large: '3em'
   }
 };
