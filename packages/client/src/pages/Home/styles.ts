@@ -6,6 +6,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background: ${props => props.theme.colors.background.primary};
 
   h1 {
     position: absolute;
@@ -34,6 +35,7 @@ export const Content = styled.div`
       font-weight: 500;
       margin-right: 4px;
       text-align: center;
+      color: ${props => props.theme.colors.text.primary};
     }
   }
 `;

@@ -1,4 +1,5 @@
-import { Container } from './styles';
+import Tag from '../Tag';
+import { Container, TagContainer } from './styles';
 
 const RepositoryList = ({ repositories }) => {
   return (
@@ -16,9 +17,15 @@ const RepositoryList = ({ repositories }) => {
             <td>{repository.full_name}</td>
             <td>{repository.description}</td>
             <td>{repository.language}</td>
-            <td>{repository.tags.join(', ')}</td>
             <td>
-              <a href="">edit</a>
+              <TagContainer>
+                {repository.tags.map(tag => (
+                  <Tag>{tag}</Tag>
+                ))}
+              </TagContainer>
+            </td>
+            <td>
+              <button>edit</button>
             </td>
           </tr>
         );

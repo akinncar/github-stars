@@ -7,6 +7,15 @@ export const Container = styled.div`
   justify-content: flex-start;
   align-items: center;
   padding: 24px;
+  background: ${props => props.theme.colors.background.primary};
+  height: 100vh;
+
+  button {
+    background: transparent;
+    border: none;
+    font-weight: 500;
+    color: ${props => props.theme.colors.text.link};
+  }
 `;
 
 export const Header = styled.div`

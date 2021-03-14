@@ -15,7 +15,6 @@ const Home = () => {
   const [username, setUsername] = useState('akinncar');
 
   function handleSearch() {
-    console.log('herwe');
     history.push(`/repositories/${username}`);
   }
 

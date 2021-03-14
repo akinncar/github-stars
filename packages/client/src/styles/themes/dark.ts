@@ -1,20 +1,29 @@
 export const dark = {
   colors: {
-    primary: '#000',
+    primary: '#ffffff',
     secondary: '#36313D',
 
     background: {
-      primary: '#FFF',
-      secondary: '#fafbfc'
+      primary: '#0D1117',
+      secondary: '#090D13',
+      alternative: '#161B22'
     },
 
     border: {
-      primary: '#d1d5da'
+      primary: '#21262D'
     },
 
     text: {
-      primary: '#000',
-      secondary: '#24292e'
+      primary: '#c9d1d9',
+      secondary: '#24292e',
+      link: '#58a6ff',
+      title: '#ffffff'
+    },
+
+    tag: {
+      text: '#58a6ff',
+      background: 'rgba(56, 139, 253, 0.1)',
+      hover: '#152A45'
     },
 
     button: {

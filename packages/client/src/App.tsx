@@ -1,13 +1,13 @@
 import GlobalStyle from './styles/global';
 import Routes from './routes';
-import Theme from './contexts/Theme';
+import AppProvider from './contexts';
 
 const App = () => {
   return (
-    <Theme>
+    <AppProvider>
       <GlobalStyle />
       <Routes />
-    </Theme>
+    </AppProvider>
   );
 };
 

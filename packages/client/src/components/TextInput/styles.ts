@@ -12,4 +12,5 @@ export const Container = styled.div`
 export const Input = styled.input`
   border: none;
   background-color: transparent;
+  color: ${props => props.theme.colors.text.primary};
 `;

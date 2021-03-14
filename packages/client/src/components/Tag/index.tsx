@@ -1,9 +1,9 @@
 import { Container } from './styles';
 
-export default function Logo() {
+export default function Loading({ children }) {
   return (
     <Container>
-      <h1>GithubStars</h1>
+      <span>{children}</span>
     </Container>
   );
 }

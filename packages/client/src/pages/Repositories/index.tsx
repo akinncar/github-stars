@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { useFetch } from '../../hooks/useFetch';
 
 import Loading from '../../components/Loading';
@@ -17,10 +17,15 @@ interface Repository {
 }
 
 const Repositories = () => {
+  const history = useHistory();
   const { username } = useParams<ParamTypes>();
   const { data, error } = useFetch<Array<Repository>>(
     `repositoryGet/${username}`
   );
+
+  function handleRedirectToHome() {
+    history.push(`/`);
+  }
 
   if (!data) {
     return <Loading />;
@@ -34,7 +39,7 @@ const Repositories = () => {
     <Container>
       <Header>
         <Logo />
-        <Link to="/">Home</Link>
+        <button onClick={handleRedirectToHome}>Home</button>
       </Header>
       <RepositoryList repositories={data} />
     </Container>

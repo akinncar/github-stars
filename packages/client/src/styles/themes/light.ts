@@ -1,6 +1,6 @@
 export const light = {
   colors: {
-    primary: '#000',
+    primary: '#000000',
     secondary: '#36313D',
 
     background: {
@@ -15,7 +15,15 @@ export const light = {
 
     text: {
       primary: '#000',
-      secondary: '#24292e'
+      secondary: '#24292e',
+      link: '#0366d6',
+      title: '#000'
+    },
+
+    tag: {
+      text: '#0366d6',
+      background: '#f1f8ff',
+      hover: '#DDEEFF'
     },
 
     button: {

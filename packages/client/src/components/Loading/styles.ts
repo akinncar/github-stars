@@ -7,9 +7,10 @@ export const Container = styled.div`
   align-items: center;
   height: 100vh;
   flex-direction: column;
+  background: ${props => props.theme.colors.background.primary};
 
   p {
     margin-top: 8px;
-    color: ${props => props.theme.colors.text.secondary};
+    color: ${props => props.theme.colors.text.primary};
   }
 `;
