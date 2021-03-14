@@ -5,7 +5,7 @@ export const Container = styled.table`
   border-style: hidden;
   border-spacing: 0px;
   border: 1px solid ${props => props.theme.colors.border.primary};
-  border-radius: 5px;
+  border-radius: 6px;
   margin: 16px 0;
   color: ${props => props.theme.colors.text.primary};
 
@@ -21,19 +21,19 @@ export const Container = styled.table`
   }
 
   tr:last-child td:first-child {
-    border-bottom-left-radius: 4px;
+    border-bottom-left-radius: 5px;
   }
 
   tr:last-child td:last-child {
-    border-bottom-right-radius: 4px;
+    border-bottom-right-radius: 5px;
   }
 
   th:first-child {
-    border-top-left-radius: 4px;
+    border-top-left-radius: 5px;
   }
 
   th:last-child {
-    border-top-right-radius: 4px;
+    border-top-right-radius: 5px;
   }
 
   td > button {
