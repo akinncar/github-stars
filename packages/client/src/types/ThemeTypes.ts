@@ -20,6 +20,8 @@ export interface TagColorsType {
   text: string;
   background: string;
   hover: string;
+  backgroundClose: string;
+  hoverClose: string;
 }
 
 export interface ButtonColorsType {
@@ -30,17 +32,21 @@ export interface ButtonColorsType {
 }
 export interface ButtonColorsBackgroundType {
   primary: string;
+  secondary: string;
 }
 
 export interface ButtonColorsBackgroundFocusType {
   primary: string;
+  secondary: string;
 }
 export interface ButtonColorsTextType {
   primary: string;
+  secondary: string;
 }
 
 export interface ButtonColorsBorderType {
   primary: string;
+  secondary: string;
 }
 
 export interface ModalColorsType {

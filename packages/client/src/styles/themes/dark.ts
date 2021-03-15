@@ -26,28 +26,34 @@ export const dark: ThemeType = {
     tag: {
       text: '#58a6ff',
       background: 'rgba(56, 139, 253, 0.1)',
-      hover: '#152A45'
+      hover: '#152A45',
+      backgroundClose: 'rgba(56, 139, 253, 0.2)',
+      hoverClose: 'rgba(56, 139, 253, 0.3)'
     },
 
     button: {
       background: {
-        primary: '#2ea44f'
+        primary: '#2ea44f',
+        secondary: '#21262d'
       },
       backgroundFocus: {
-        primary: '#35b157'
+        primary: '#35b157',
+        secondary: '#292f38'
       },
       text: {
-        primary: '#FFF'
+        primary: '#FFF',
+        secondary: '#FFF'
       },
       border: {
-        primary: '#298545'
+        primary: '#298545',
+        secondary: '#30363d'
       }
     },
 
     modal: {
       background: 'rgba(0, 0, 0, 0.5)',
-      contentBackground: '#161B22',
-      headerBackground: '#090D13'
+      headerBackground: '#161B22',
+      contentBackground: '#090D13'
     }
   }
 };

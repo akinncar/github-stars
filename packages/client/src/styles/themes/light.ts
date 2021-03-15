@@ -26,28 +26,34 @@ export const light: ThemeType = {
     tag: {
       text: '#0366d6',
       background: '#f1f8ff',
-      hover: '#DDEEFF'
+      hover: '#DDEEFF',
+      backgroundClose: '#d6eaff',
+      hoverClose: '#bedaf7'
     },
 
     button: {
       background: {
-        primary: '#2ea44f'
+        primary: '#2ea44f',
+        secondary: '#fafbfc'
       },
       backgroundFocus: {
-        primary: '#2a9b4a'
+        primary: '#2a9b4a',
+        secondary: '#f1f8ff'
       },
       text: {
-        primary: '#FFF'
+        primary: '#FFF',
+        secondary: '#24292e'
       },
       border: {
-        primary: '#298545'
+        primary: '#298545',
+        secondary: 'rgba(27, 31, 35, 0.15)'
       }
     },
 
     modal: {
       background: 'rgba(0, 0, 0, 0.5)',
-      contentBackground: '#fafbfc',
-      headerBackground: '#F6F8FA'
+      contentBackground: '#ffffff',
+      headerBackground: '#f6f8fa'
     }
   }
 };

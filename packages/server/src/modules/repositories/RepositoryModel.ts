@@ -1,4 +1,5 @@
 import mongoose, { Document, Model } from 'mongoose';
+import { ObjectID } from 'mongodb';
 
 const Schema = new mongoose.Schema(
   {
@@ -23,6 +24,7 @@ const Schema = new mongoose.Schema(
 );
 
 export interface IRepository extends Document {
+  _id: ObjectID;
   username: string;
   full_name: string;
   tags: Array<string>;

@@ -4,7 +4,8 @@ export const Container = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
-  background-color: ${props => props.theme.colors.modal.headerBackground};
+  width: 450px;
+  background-color: ${props => props.theme.colors.modal.contentBackground};
   border-radius: 5px;
   border: 1px solid ${props => props.theme.colors.border.primary};
 `;
@@ -16,7 +17,7 @@ export const Header = styled.div`
   align-items: center;
   text-align: center;
   padding: 16px;
-  background-color: ${props => props.theme.colors.modal.contentBackground};
+  background-color: ${props => props.theme.colors.modal.headerBackground};
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
   border-bottom: 1px solid ${props => props.theme.colors.border.primary};
@@ -31,7 +32,6 @@ export const Header = styled.div`
     border: none;
     font-weight: 500;
     color: ${props => props.theme.colors.text.primary};
-    height: 13px;
   }
 `;
 
@@ -53,16 +53,23 @@ export const Content = styled.div`
 export const TagContainer = styled.div`
   display: flex;
   flex: 1;
+  flex-wrap: wrap;
   margin-top: 16px;
   padding: 6px 12px;
   border-radius: 5px;
   border: 1px solid ${props => props.theme.colors.border.primary};
 
   input {
+    display: flex;
+    flex: 1;
     background-color: transparent;
     color: ${props => props.theme.colors.text.primary};
     border: none;
-    padding: 0 6px;
+    padding: 6px;
+  }
+
+  > div {
+    margin: 6px 6px 6px 0;
   }
 `;
 
@@ -72,4 +79,8 @@ export const Footer = styled.div`
   align-items: center;
   padding: 16px;
   border-top: 1px solid ${props => props.theme.colors.border.primary};
+
+  > button {
+    margin-left: 6px;
+  }
 `;
