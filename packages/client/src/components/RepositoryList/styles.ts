@@ -44,6 +44,11 @@ export const Container = styled.table`
   }
 `;
 
-export const TagContainer = styled.table`
+export const TagContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
+
+  > div {
+    margin: 6px 6px 6px 0;
+  }
 `;

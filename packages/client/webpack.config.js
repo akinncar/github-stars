@@ -46,13 +46,14 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'public/index.html'),
-      favicon: path.resolve(__dirname, 'public/favicon.ico')
+      template: path.resolve(__dirname, 'public/index.html')
     }),
     new MiniCssExtractPlugin({
       filename: 'styles.[contentHash].css'
     }),
-    new Dotenv()
+    new Dotenv({
+      path: path.resolve(__dirname, './.env')
+    })
   ],
   devServer: {
     historyApiFallback: true,
