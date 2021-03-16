@@ -16,11 +16,11 @@ export const Container = styled.div<ContainerProps>`
   width: 100%;
   background-color: ${props => props.theme.colors.modal.background};
   opacity: ${props => (props.isOpen ? '100%' : 0)};
-  transition: 1s;
 `;
 
 export const Content = styled.div`
   display: flex;
   margin: 0 auto;
   border-radius: 5px;
+  transition: 200ms;
 `;

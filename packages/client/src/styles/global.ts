@@ -6,6 +6,7 @@ export default createGlobalStyle`
     padding: 0;
     outline: 0;
     box-sizing: border-box;
+
   }
 
   body {
@@ -13,11 +14,17 @@ export default createGlobalStyle`
     min-height: 100vh;
     justify-content: center;
     align-items: center;
-    -webkit-font-smoothing: antialiased
+    -webkit-font-smoothing: antialiased;
   }
+
   body, input, button, textarea {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   }
+
+  div, input, button, textarea, p, span, h1, h2, h3, h4, h5 {
+    transition: all 200ms ease-in-out;
+  }
+
   button {
     cursor: pointer;
   }

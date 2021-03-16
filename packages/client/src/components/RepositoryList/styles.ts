@@ -42,6 +42,15 @@ export const Container = styled.table`
     font-weight: 500;
     color: ${props => props.theme.colors.text.link};
   }
+
+  @media (max-width: 768px) {
+    tr th:nth-child(2),
+    tr td:nth-child(2),
+    tr th:nth-child(3),
+    tr td:nth-child(3) {
+      display: none;
+    }
+  }
 `;
 
 export const TagContainer = styled.div`

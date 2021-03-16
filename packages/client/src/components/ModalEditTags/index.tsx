@@ -70,7 +70,11 @@ export default function ModalTags({
           </p>
           <TagContainer>
             {editedTags.map(tag => (
-              <Tag isEditable onPressIcon={() => handleDeleteTag(tag)}>
+              <Tag
+                key={tag}
+                isEditable
+                onPressIcon={() => handleDeleteTag(tag)}
+              >
                 {tag}
               </Tag>
             ))}
