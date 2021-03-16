@@ -20,7 +20,6 @@ export const Container = styled.div<ContainerProps>`
 
 export const Content = styled.div`
   display: flex;
-  margin: 0 auto;
   border-radius: 5px;
-  transition: 200ms;
+  transition: all 200ms ease-in-out;
 `;

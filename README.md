@@ -1,12 +1,12 @@
-<p align="center"> 
-  <img src="./src/images/assets/header.png" href="https://github-stars-akinncar.vercel.app/">
+<p align="center">
+  <img src="./packages/client/src/assets/images/header-docs.png" href="https://github-stars-akinncar.vercel.app/">
 </p>
 
-<p align="center"> 
+<p align="center">
   <a aria-label="" href="/LICENSE" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-success.svg?style=flat-square&color=33CC12" target="_blank" />
   </a>
-  
+
   <a aria-label="heroku" href="https://github-stars-api-akinncar.herokuapp.com/" target="_blank">
     <img alt="Deployed on Heroku" src="https://heroku-badge.herokuapp.com/?app=github-stars-api-akinncar" />
   </a>
@@ -26,7 +26,7 @@ The objective of this project is to create a web app that be possible to find st
 
 ## Documentation
 
-In the docs, you can see the [Installation]() session to get started this project in your local machine, and also see the endpoints in [Rest API]() session.
+In the docs, you can see the [Installation](./packages/docs/Installation.md) session to get started this project in your local machine, and also see the endpoints in [Rest API](./packages/docs/RestAPI.md) session.
 
 ## Technologies
 
