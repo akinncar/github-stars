@@ -430,6 +430,12 @@ export const repositoriesGet = async (ctx: Context) => {
 
   const data = await response.json();
 
+  if (data.message) {
+    ctx.body = data;
+    ctx.status = 404;
+    return;
+  }
+
   const repositories = await Repository.find({
     username
   });

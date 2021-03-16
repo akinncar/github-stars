@@ -8,7 +8,7 @@ export const Container = styled.div`
   align-items: center;
   padding: 24px;
   background: ${props => props.theme.colors.background.primary};
-  height: 100vh;
+  min-height: 100vh;
 `;
 
 export const Header = styled.div`

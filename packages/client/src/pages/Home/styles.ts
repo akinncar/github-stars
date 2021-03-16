@@ -7,18 +7,7 @@ export const Container = styled.div`
   align-items: center;
   height: 100vh;
   background: ${props => props.theme.colors.background.primary};
-
-  h1 {
-    position: absolute;
-    top: 24px;
-    left: 24px;
-  }
-
-  > label {
-    position: absolute;
-    top: 24px;
-    right: 24px;
-  }
+  flex-direction: column;
 `;
 
 export const Content = styled.div`
@@ -38,4 +27,15 @@ export const Content = styled.div`
       color: ${props => props.theme.colors.text.primary};
     }
   }
+`;
+
+export const Header = styled.div`
+  display: flex;
+  position: absolute;
+  top: 24px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 24px;
+  text-align: center;
 `;

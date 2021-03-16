@@ -24,39 +24,42 @@ const RepositoryList = ({ repositories, updateTags }) => {
           setModalIsOpen(false);
         }}
       />
-
-      <tr>
-        <th>Repository</th>
-        <th>Description</th>
-        <th>Language</th>
-        <th>Tags</th>
-        <th></th>
-      </tr>
-      {repositories.map(repository => {
-        return (
-          <tr>
-            <td>{repository.full_name}</td>
-            <td>{repository.description}</td>
-            <td>{repository.language}</td>
-            <td>
-              <TagContainer>
-                {repository.tags.map(tag => (
-                  <Tag>{tag}</Tag>
-                ))}
-              </TagContainer>
-            </td>
-            <td>
-              <button
-                onClick={() => {
-                  handleOpenModal(repository);
-                }}
-              >
-                edit
-              </button>
-            </td>
-          </tr>
-        );
-      })}
+      <thead>
+        <tr>
+          <th>Repository</th>
+          <th>Description</th>
+          <th>Language</th>
+          <th>Tags</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {repositories.map(repository => {
+          return (
+            <tr key={repository.id}>
+              <td>{repository.full_name}</td>
+              <td>{repository.description}</td>
+              <td>{repository.language}</td>
+              <td>
+                <TagContainer>
+                  {repository.tags.map(tag => (
+                    <Tag key={tag}>{tag}</Tag>
+                  ))}
+                </TagContainer>
+              </td>
+              <td>
+                <button
+                  onClick={() => {
+                    handleOpenModal(repository);
+                  }}
+                >
+                  edit
+                </button>
+              </td>
+            </tr>
+          );
+        })}
+      </tbody>
     </Container>
   );
 };

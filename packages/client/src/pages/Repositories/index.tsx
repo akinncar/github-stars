@@ -1,10 +1,11 @@
 import { useCallback } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
-import { useFetch } from '../../hooks/useFetch';
 import { mutate as mutateGlobal } from 'swr';
+import { useFetch } from '../../hooks/useFetch';
 import api from '../../services/api';
 
 import { RepositoryType } from '../../types/RepositoryTypes';
+import Error from '../../components/Error';
 import Loading from '../../components/Loading';
 import Logo from '../../components/Logo';
 import RepositoryList from '../../components/RepositoryList';
@@ -51,12 +52,12 @@ const Repositories = () => {
     history.push(`/`);
   }
 
-  if (!data) {
-    return <Loading />;
+  if (error) {
+    return <Error>{error.response.data.message}</Error>;
   }
 
-  if (error) {
-    return <p>Error!</p>;
+  if (!data) {
+    return <Loading />;
   }
 
   return (

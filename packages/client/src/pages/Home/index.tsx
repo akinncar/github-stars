@@ -6,7 +6,7 @@ import ThemeToggle from '../../components/ThemeToggle';
 import TextInput from '../../components/TextInput';
 import Button from '../../components/Button';
 
-import { Container, Content } from './styles';
+import { Container, Content, Header } from './styles';
 import 'react-toggle/style.css';
 
 const Home = () => {
@@ -20,8 +20,10 @@ const Home = () => {
 
   return (
     <Container>
-      <Logo />
-      <ThemeToggle />
+      <Header>
+        <Logo />
+        <ThemeToggle />
+      </Header>
 
       <Content>
         <div>

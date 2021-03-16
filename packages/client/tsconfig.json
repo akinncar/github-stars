@@ -2,6 +2,7 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "lib": ["esnext", "dom"],
+    "target": "es2020",
     "allowJs": false,
     "checkJs": false,
     "jsx": "react-jsx",
@@ -9,6 +10,7 @@
     "noImplicitAny": false
   },
   "include": [
-    "./src/**/*"
+    "./src/**/*",
+    "./src/index.d.ts"
   ]
 }
