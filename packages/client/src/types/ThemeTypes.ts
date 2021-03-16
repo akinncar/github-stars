@@ -6,6 +6,7 @@ export interface BackgroundColorsType {
 
 export interface BorderColorsType {
   primary: string;
+  secondary: string;
 }
 
 export interface TextColorsType {

@@ -12,10 +12,12 @@ import 'react-toggle/style.css';
 const Home = () => {
   const history = useHistory();
 
-  const [username, setUsername] = useState('akinncar');
+  const [username, setUsername] = useState('');
 
   function handleSearch() {
-    history.push(`/repositories/${username}`);
+    if (username !== '') {
+      history.push(`/repositories/${username}`);
+    }
   }
 
   return (
@@ -29,6 +31,7 @@ const Home = () => {
         <div>
           <p>https://github.com/</p>
           <TextInput
+            placeholder="username"
             value={username}
             onChange={e => setUsername(e.target.value)}
           />

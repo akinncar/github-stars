@@ -24,3 +24,16 @@ export const Header = styled.div`
     color: ${props => props.theme.colors.text.link};
   }
 `;
+
+export const SearchContainer = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  margin: 16px 0 8px 0;
+
+  input {
+    &:focus-within {
+      width: 450px;
+    }
+  }
+`;

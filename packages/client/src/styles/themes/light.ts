@@ -12,7 +12,8 @@ export const light: ThemeType = {
     },
 
     border: {
-      primary: '#d1d5da'
+      primary: '#d1d5da',
+      secondary: '#388bfd'
     },
 
     text: {

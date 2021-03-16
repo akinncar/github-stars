@@ -1,26 +1,33 @@
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { mutate as mutateGlobal } from 'swr';
-import { useFetch } from '../../hooks/useFetch';
+import { MdSearch } from 'react-icons/md';
 import api from '../../services/api';
+import { useTheme } from '../../hooks/useTheme';
+import { useFetch } from '../../hooks/useFetch';
 
 import { RepositoryType } from '../../types/RepositoryTypes';
 import Error from '../../components/Error';
 import Loading from '../../components/Loading';
 import Logo from '../../components/Logo';
+import TextInput from '../../components/TextInput';
 import RepositoryList from '../../components/RepositoryList';
-import { Container, Header } from './styles';
+import { Container, Header, SearchContainer } from './styles';
 
 interface ParamType {
   username: string;
 }
 
 const Repositories = () => {
+  const { getCurrentTheme } = useTheme();
+  const theme = getCurrentTheme();
   const history = useHistory();
   const { username } = useParams<ParamType>();
   const { data, error, mutate } = useFetch<Array<RepositoryType>>(
     `repositories/${username}`
   );
+
+  const [searchText, setSearchText] = useState('');
 
   const handleChangeTags = useCallback(
     (full_name: string, tags: Array<string>) => {
@@ -66,6 +73,14 @@ const Repositories = () => {
         <Logo />
         <button onClick={handleRedirectToHome}>Home</button>
       </Header>
+      <SearchContainer>
+        <TextInput
+          icon={<MdSearch size={16} color={theme.colors.text.primary} />}
+          placeholder="Search tags..."
+          value={searchText}
+          onChange={e => setSearchText(e.target.value)}
+        />
+      </SearchContainer>
       <RepositoryList repositories={data} updateTags={handleChangeTags} />
     </Container>
   );

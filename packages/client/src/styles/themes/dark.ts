@@ -12,7 +12,8 @@ export const dark: ThemeType = {
     },
 
     border: {
-      primary: '#21262D'
+      primary: '#21262D',
+      secondary: '#388bfd'
     },
 
     text: {
