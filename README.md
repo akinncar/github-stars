@@ -37,6 +37,7 @@ To develop this application, a monorepo was created with [Yarn Workspaces](https
 - [Typescript](https://www.typescriptlang.org/)
 - [ESLint](https://eslint.org/)
 - [EditorConfig](https://editorconfig.org/)
+- [Jest](https://jestjs.io/)
 
 ### Server
 
