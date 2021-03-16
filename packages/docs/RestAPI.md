@@ -32,7 +32,7 @@ https://github-stars-api-akinncar.herokuapp.com/
       <td>Server Error</td>
     </tr>
   </tbody>
-</table><br />
+</table>
 
 ## Endpoints
 
