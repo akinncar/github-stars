@@ -4,7 +4,7 @@ This project use [Node](https://nodejs.org/en/blog/release/v12.18.3/) and [Yarn]
 
 ## Clone
 
-With Node and Yarn installed, you can clone the project to your machine running this command on your therminal:
+You can clone this project to your machine running this command on your therminal:
 
 `$ git clone origin https://github.com/akinncar/github-stars.git`
 
