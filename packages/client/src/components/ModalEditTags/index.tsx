@@ -52,9 +52,7 @@ export default function ModalEditTags({
   }, [newTag]);
 
   useEffect(() => {
-    setEditedTags(prevState => {
-      return prevState !== tags ? tags : [];
-    });
+    setEditedTags(tags);
   }, [tags]);
 
   return (

@@ -9,7 +9,7 @@ export const Container = styled.div<ContainerProps>`
   flex: 1;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
@@ -21,5 +21,6 @@ export const Container = styled.div<ContainerProps>`
 export const Content = styled.div`
   display: flex;
   border-radius: 5px;
+  max-width: 90%;
   transition: all 200ms ease-in-out;
 `;

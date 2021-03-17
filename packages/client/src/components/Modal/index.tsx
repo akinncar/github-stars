@@ -3,17 +3,17 @@ import { useOutsideClick } from '../../hooks/useOutsideClick';
 import { Container, Content } from './styles';
 
 export default function Modal({ children, isOpen, onRequestClose }) {
-  const contentRef = useRef(null);
+  const containerRef = useRef(null);
 
-  // useOutsideClick(contentRef, () => {
-  //   if (isOpen) {
-  //     onRequestClose();
-  //   }
-  // });
+  useOutsideClick(containerRef, () => {
+    if (isOpen) {
+      onRequestClose();
+    }
+  });
 
   return (
-    <Container isOpen={isOpen}>
-      <Content ref={contentRef}>{children}</Content>
+    <Container ref={containerRef} isOpen={isOpen}>
+      <Content>{children}</Content>
     </Container>
   );
 }
