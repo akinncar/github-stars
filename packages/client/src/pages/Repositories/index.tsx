@@ -1,7 +1,8 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { mutate as mutateGlobal } from 'swr';
 import { MdSearch } from 'react-icons/md';
+import debounce from 'lodash.debounce';
 import api from '../../services/api';
 import { useTheme } from '../../hooks/useTheme';
 import { useFetch } from '../../hooks/useFetch';
@@ -23,11 +24,29 @@ const Repositories = () => {
   const theme = getCurrentTheme();
   const history = useHistory();
   const { username } = useParams<ParamType>();
+
+  const [searchText, setSearchText] = useState('');
+
   const { data, error, mutate } = useFetch<Array<RepositoryType>>(
     `repositories/${username}`
   );
 
-  const [searchText, setSearchText] = useState('');
+  async function fetchRepositoryFilter(text) {
+    const response = await api.get(
+      `repositories/${username}?tag=${text.trim()}`
+    );
+    mutate(response.data, false);
+  }
+
+  const debouncedSearch = useCallback(
+    debounce(text => fetchRepositoryFilter(text), 500),
+    []
+  );
+
+  const search = text => {
+    setSearchText(text);
+    debouncedSearch(text);
+  };
 
   const handleChangeTags = useCallback(
     (full_name: string, tags: Array<string>) => {
@@ -78,7 +97,7 @@ const Repositories = () => {
           icon={<MdSearch size={16} color={theme.colors.text.primary} />}
           placeholder="Search tags..."
           value={searchText}
-          onChange={e => setSearchText(e.target.value)}
+          onChange={e => search(e.target.value)}
         />
       </SearchContainer>
       <RepositoryList repositories={data} updateTags={handleChangeTags} />

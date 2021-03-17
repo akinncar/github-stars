@@ -16,6 +16,7 @@ export const repositoryTagAllPatch = async (
   ctx: ParameterizedContext<{}, {}, RepositoryPatchBody>
 ) => {
   const { body } = ctx.request;
+  body.tags = body.tags.map((tag: string) => tag.toLowerCase());
 
   const repository = await Repository.findOne({
     username: body.username,
@@ -51,9 +52,18 @@ export const repositoryTagAllPatch = async (
     return;
   }
 
+  const response = await fetch(
+    `https://api.github.com/repos/${body.full_name}`
+  );
+
+  const data = await response.json();
+
   const { _id, tags } = await new Repository({
     username: body.username,
     full_name: body.full_name,
+    html_url: data.html_url || '',
+    description: data.description || '',
+    language: data.language || '',
     tags: body.tags
   }).save();
 

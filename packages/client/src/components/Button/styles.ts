@@ -21,12 +21,21 @@ export const Btn = styled.button<BtnProps>`
         : props.theme.colors.button.border.secondary};
   border-radius: 5px;
   font-weight: 500;
-  transition: 0.2s;
+  transition: 200ms;
 
   :hover {
     background-color: ${props =>
       props.variant === 'primary'
         ? props.theme.colors.button.backgroundFocus.primary
         : props.theme.colors.button.backgroundFocus.secondary};
+  }
+
+  &:disabled {
+    opacity: 50%;
+    background-color: ${props =>
+      props.theme.colors.button.background.secondary};
+    color: ${props => props.theme.colors.button.text.secondary};
+    border: 1px solid ${props => props.theme.colors.button.border.secondary};
+    cursor: not-allowed;
   }
 `;

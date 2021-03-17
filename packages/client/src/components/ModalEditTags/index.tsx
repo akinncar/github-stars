@@ -7,7 +7,7 @@ import Button from '../Button';
 import Tag from '../Tag';
 import { Container, Header, Content, TagContainer, Footer } from './styles';
 
-export default function ModalTags({
+export default function ModalEditTags({
   modalIsOpen,
   repository,
   onSave,
@@ -52,7 +52,9 @@ export default function ModalTags({
   }, [newTag]);
 
   useEffect(() => {
-    setEditedTags(tags);
+    setEditedTags(prevState => {
+      return prevState !== tags ? tags : [];
+    });
   }, [tags]);
 
   return (

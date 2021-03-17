@@ -37,7 +37,7 @@ const Home = () => {
           />
         </div>
         <div>
-          <Button variant="primary" onClick={handleSearch}>
+          <Button variant="primary" onClick={handleSearch} disabled={!username}>
             Search Repositories
           </Button>
         </div>

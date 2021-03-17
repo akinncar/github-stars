@@ -25,7 +25,8 @@ module.exports = {
   rules: {
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
-    'prettier/prettier': 'error'
+    'prettier/prettier': 'error',
+    'no-unused-expressions': 'warn'
   },
   settings: {
     'import/resolver': {

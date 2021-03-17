@@ -36,7 +36,7 @@ const RepositoryList = ({ repositories, updateTags }) => {
       <tbody>
         {repositories.map(repository => {
           return (
-            <tr key={repository.id}>
+            <tr key={repository._id}>
               <td>{repository.full_name}</td>
               <td>{repository.description}</td>
               <td>{repository.language}</td>
