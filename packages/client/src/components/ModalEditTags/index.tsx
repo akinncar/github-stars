@@ -13,8 +13,8 @@ export default function ModalEditTags({
   onSave,
   closeModal
 }) {
-  const tags = repository?.tags || [];
-  const full_name = repository?.full_name || '';
+  const tags = repository.tags || [];
+  const full_name = repository.full_name || '';
 
   const { getCurrentTheme } = useTheme();
   const theme = getCurrentTheme();

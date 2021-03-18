@@ -56,7 +56,7 @@ const Repositories = () => {
         tags
       });
 
-      const updatedRepositories = data?.map(repository => {
+      const updatedRepositories = data.map(repository => {
         if (repository.full_name === full_name) {
           return { ...repository, tags: tags };
         }

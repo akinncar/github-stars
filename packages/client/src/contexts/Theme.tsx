@@ -33,16 +33,14 @@ const ThemeProvider = ({ children }) => {
   }
 
   return (
-    <StyledProvider theme={getCurrentTheme()}>
-      <ThemeContext.Provider
-        value={{
-          changeTheme,
-          getCurrentTheme
-        }}
-      >
-        {children}
-      </ThemeContext.Provider>
-    </StyledProvider>
+    <ThemeContext.Provider
+      value={{
+        changeTheme,
+        getCurrentTheme
+      }}
+    >
+      <StyledProvider theme={getCurrentTheme()}>{children}</StyledProvider>
+    </ThemeContext.Provider>
   );
 };
 
