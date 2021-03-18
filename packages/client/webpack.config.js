@@ -59,9 +59,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'styles.[contentHash].css'
     }),
-    new Dotenv({
-      path: path.resolve(__dirname, './.env')
-    })
+    new Dotenv()
   ],
   devServer: {
     historyApiFallback: true,

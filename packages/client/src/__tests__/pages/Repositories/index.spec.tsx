@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, fireEvent, waitFor } from '@testing-library/react';
 import MockedContainer from '../../../__mocks__/MockedContainer';
 import Repositories from '../../../pages/Repositories';
 import api from '../../../services/api';
@@ -27,14 +27,34 @@ const repositories = [
     tags: []
   }
 ];
+const repositoriesFilter = [
+  {
+    id: 135082477,
+    node_id: 'MDEwOlJlcG9zaXRvcnkxMzUwODI0Nzc=',
+    name: 'react',
+    full_name: 'facebook/react',
+    description: 'The React Facebook Project',
+    watchers_count: 706,
+    language: 'TypeScript',
+    tags_id: '604c13a7000a9904300ab822',
+    tags: ['facebook']
+  }
+];
 
 jest.spyOn(api, 'get').mockImplementation(url => {
-  if (url === `repositories/${username}`)
-    return Promise.resolve({
-      data: repositories
-    });
+  switch (url) {
+    case `repositories/${username}`:
+      return Promise.resolve({
+        data: repositories
+      });
+    case `repositories/${username}?tag=face`:
+      return Promise.resolve({
+        data: repositoriesFilter
+      });
 
-  return Promise.resolve({ data: { message: 'Not Found' }, status: 404 });
+    default:
+      return Promise.resolve({ data: { message: 'Not Found' }, status: 404 });
+  }
 });
 
 jest.mock('react-router-dom', () => ({
@@ -55,5 +75,18 @@ describe('Repositories Page', () => {
     await waitFor(() => {
       expect(getByText('brodybits/create-react-native-module')).toBeTruthy();
     });
+  });
+
+  it('should be able to search repositories by tag', async () => {
+    const { getByText, getByPlaceholderText } = render(
+      <MockedContainer>
+        <Repositories />
+      </MockedContainer>
+    );
+
+    // const input = getByPlaceholderText('Search tags...');
+    // fireEvent.change(input, { target: { value: 'face' } });
+
+    // expect(getByText('facebook/react')).toBeTruthy();
   });
 });

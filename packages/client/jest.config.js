@@ -4,11 +4,12 @@ module.exports = {
   displayName: name,
   name,
   preset: 'ts-jest',
-  moduleNameMapper: {
-    '.+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$':
-      'identity-obj-proxy'
+  globals: {
+    'ts-jest': {
+      isolatedModules: true
+    }
   },
-  transform: {
-    '^.+\\.(ts|tsx)$': 'ts-jest'
+  moduleNameMapper: {
+    '.+\\.(css|png|jpg|ttf|woff|woff2)$': 'identity-obj-proxy'
   }
 };

@@ -1,8 +1,9 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "lib": ["esnext", "dom"],
-    "target": "es2020",
+    "lib": ["ES2019", "dom"],
+    "module": "commonjs",
+    "target": "ES2019",
     "allowJs": false,
     "checkJs": false,
     "jsx": "react-jsx",
