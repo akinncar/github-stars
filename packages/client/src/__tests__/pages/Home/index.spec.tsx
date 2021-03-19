@@ -1,3 +1,4 @@
+import '../../../__mocks__/react-router-dom';
 import { render } from '@testing-library/react';
 import MockedContainer from '../../../__mocks__/MockedContainer';
 import Home from '../../../pages/Home';

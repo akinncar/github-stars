@@ -10,7 +10,7 @@ export const Container = styled.div`
   flex-direction: column;
 `;
 
-export const Content = styled.div`
+export const Content = styled.form`
   > div {
     display: flex;
     flex: 1;

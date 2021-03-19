@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { mutate as mutateGlobal } from 'swr';
 import { MdSearch } from 'react-icons/md';
@@ -43,10 +43,10 @@ const Repositories = () => {
     []
   );
 
-  const search = text => {
+  function search(text) {
     setSearchText(text);
     debouncedSearch(text);
-  };
+  }
 
   const handleChangeTags = useCallback(
     (full_name: string, tags: Array<string>) => {

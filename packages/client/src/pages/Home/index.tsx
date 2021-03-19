@@ -27,7 +27,7 @@ const Home = () => {
         <ThemeToggle />
       </Header>
 
-      <Content>
+      <Content id="user">
         <div>
           <p>https://github.com/</p>
           <TextInput
@@ -37,7 +37,13 @@ const Home = () => {
           />
         </div>
         <div>
-          <Button variant="primary" onClick={handleSearch} disabled={!username}>
+          <Button
+            type="submit"
+            form="user"
+            variant="primary"
+            onClick={handleSearch}
+            disabled={!username}
+          >
             Search Repositories
           </Button>
         </div>

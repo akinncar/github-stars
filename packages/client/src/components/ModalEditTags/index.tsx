@@ -53,7 +53,7 @@ export default function ModalEditTags({
 
   useEffect(() => {
     setEditedTags(tags);
-  }, [tags]);
+  }, [modalIsOpen]);
 
   return (
     <Modal isOpen={modalIsOpen} onRequestClose={handleCloseModal}>
