@@ -17,11 +17,18 @@ export const Header = styled.div`
   align-items: center;
   width: 100%;
 
-  > button {
+  button {
     background: transparent;
     border: none;
     font-weight: 500;
     color: ${props => props.theme.colors.text.link};
+    padding-left: 12px;
+  }
+
+  > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `;
 

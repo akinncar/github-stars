@@ -40,7 +40,7 @@ export const Content = styled.div`
   flex-direction: column;
   padding: 16px;
 
-  > p {
+  p {
     font-weight: 500;
 
     > span {
@@ -70,6 +70,18 @@ export const TagContainer = styled.div`
 
   > div {
     margin: 6px 6px 6px 0;
+  }
+`;
+
+export const SuggestedContainer = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 16px;
+
+  p {
+    padding-right: 6px;
   }
 `;
 

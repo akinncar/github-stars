@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+interface ContainerProps {
+  isFullScreen?: boolean;
+}
+
+export const Container = styled.div<ContainerProps>`
   display: flex;
   flex: 1;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  flex-direction: column;
+  height: ${props => (props.isFullScreen ? '100vh' : 'auto')};
+  padding: 16px;
   background: ${props => props.theme.colors.background.primary};
-
-  p {
-    margin-top: 8px;
-    color: ${props => props.theme.colors.text.primary};
-  }
 `;

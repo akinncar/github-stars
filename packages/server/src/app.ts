@@ -7,6 +7,7 @@ import { repositoriesGet } from './modules/repositories/repositorieGet';
 import { repositoryTagAllPatch } from './modules/repositories/repositoryTagAllPatch';
 import { repositoryTagPatch } from './modules/repositories/repositoryTagPatch';
 import { repositoryTagDelete } from './modules/repositories/repositoryTagDelete';
+import { repositoryTagSuggestionGet } from './modules/repositories/repositoryTagSuggestionGet';
 
 const app = new Koa();
 const router = new Router();
@@ -19,7 +20,8 @@ router.get('/', ctx => {
     'GET  / - repositories/:username',
     'PATCH  / - repositoryTagAll',
     'PATCH  / - repositoryTag',
-    'DELETE  / - repositoryTag'
+    'DELETE  / - repositoryTag',
+    'GET  / - repositoryTagSuggestion/:language'
   ];
 
   ctx.status = 200;
@@ -30,6 +32,7 @@ router.get('/repositories/:username', repositoriesGet);
 router.patch('/repositoryTagAll', repositoryTagAllPatch);
 router.patch('/repositoryTag', repositoryTagPatch);
 router.delete('/repositoryTag/:id/:tag', repositoryTagDelete);
+router.get('/repositoryTagSuggestion/:language', repositoryTagSuggestionGet);
 
 app.use(router.routes()).use(router.allowedMethods());
 

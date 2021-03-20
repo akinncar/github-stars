@@ -6,8 +6,9 @@ import debounce from 'lodash.debounce';
 import api from '../../services/api';
 import { useTheme } from '../../hooks/useTheme';
 import { useFetch } from '../../hooks/useFetch';
-
 import { RepositoryType } from '../../types/RepositoryTypes';
+
+import ThemeToggle from '../../components/ThemeToggle';
 import Error from '../../components/Error';
 import Loading from '../../components/Loading';
 import Logo from '../../components/Logo';
@@ -83,14 +84,17 @@ const Repositories = () => {
   }
 
   if (!data) {
-    return <Loading />;
+    return <Loading isFullScreen={true} />;
   }
 
   return (
     <Container>
       <Header>
         <Logo />
-        <button onClick={handleRedirectToHome}>Home</button>
+        <div>
+          <ThemeToggle />
+          <button onClick={handleRedirectToHome}>Back to Home</button>
+        </div>
       </Header>
       <SearchContainer>
         <TextInput

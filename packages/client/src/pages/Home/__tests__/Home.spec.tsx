@@ -1,7 +1,7 @@
 import '../../../__mocks__/react-router-dom';
 import { render } from '@testing-library/react';
 import MockedContainer from '../../../__mocks__/MockedContainer';
-import Home from '../../../pages/Home';
+import Home from '..';
 
 describe('Home Page', () => {
   it('should be able to render page', async () => {

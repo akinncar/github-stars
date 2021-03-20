@@ -3,7 +3,7 @@ import Button from '../Button';
 import { Container } from './styles';
 import octocatError from '../../assets/images/octocat-error.png';
 
-export default function Loading({ children }) {
+export default function Error({ children }) {
   const history = useHistory();
 
   return (
