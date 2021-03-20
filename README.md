@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./packages/client/src/assets/images/header-docs.png" href="https://github-stars-akinncar.vercel.app/">
+  <img src="./packages/client/src/assets/images/header-docs.png" href="https://github-stars-akinncar.vercel.app/" width="650">
 </p>
 
 <p align="center">
