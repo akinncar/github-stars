@@ -10,6 +10,31 @@ export const Container = styled.div`
   flex-direction: column;
 `;
 
+export const Header = styled.div`
+  display: flex;
+  position: absolute;
+  top: 24px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 24px;
+  text-align: center;
+
+  button {
+    background: transparent;
+    border: none;
+    font-weight: 500;
+    color: ${props => props.theme.colors.text.link};
+    padding-right: 12px;
+  }
+
+  > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
 export const Content = styled.form`
   > div {
     display: flex;
@@ -27,15 +52,4 @@ export const Content = styled.form`
       color: ${props => props.theme.colors.text.primary};
     }
   }
-`;
-
-export const Header = styled.div`
-  display: flex;
-  position: absolute;
-  top: 24px;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 0 24px;
-  text-align: center;
 `;

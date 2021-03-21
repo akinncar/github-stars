@@ -14,6 +14,10 @@ const Home = () => {
 
   const [username, setUsername] = useState('');
 
+  function handleRedirectToGithub() {
+    window.open('https://github.com/akinncar/github-stars');
+  }
+
   function handleSearch() {
     if (username !== '') {
       history.push(`/repositories/${username}`);
@@ -24,7 +28,10 @@ const Home = () => {
     <Container>
       <Header>
         <Logo />
-        <ThemeToggle />
+        <div>
+          <button onClick={handleRedirectToGithub}>View on Github</button>
+          <ThemeToggle />
+        </div>
       </Header>
 
       <Content id="user">

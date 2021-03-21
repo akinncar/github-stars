@@ -92,8 +92,8 @@ const Repositories = () => {
       <Header>
         <Logo />
         <div>
-          <ThemeToggle />
           <button onClick={handleRedirectToHome}>Back to Home</button>
+          <ThemeToggle />
         </div>
       </Header>
       <SearchContainer>

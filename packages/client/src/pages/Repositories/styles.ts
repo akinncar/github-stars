@@ -22,7 +22,7 @@ export const Header = styled.div`
     border: none;
     font-weight: 500;
     color: ${props => props.theme.colors.text.link};
-    padding-left: 12px;
+    padding-right: 12px;
   }
 
   > div {
