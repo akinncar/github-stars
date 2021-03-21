@@ -10,6 +10,7 @@ import Tag from '../Tag';
 import {
   Container,
   Header,
+  LoadingContainer,
   Content,
   TagContainer,
   SuggestedContainer,
@@ -87,7 +88,9 @@ export default function ModalEditTags({
   if (!suggestedTags) {
     return (
       <Modal isOpen={modalIsOpen} onRequestClose={handleCloseModal}>
-        <Loading />
+        <LoadingContainer>
+          <Loading />
+        </LoadingContainer>
       </Modal>
     );
   }

@@ -35,6 +35,10 @@ export const Header = styled.div`
   }
 `;
 
+export const LoadingContainer = styled.div`
+  min-width: 280px !important;
+`;
+
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
