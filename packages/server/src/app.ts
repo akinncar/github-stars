@@ -20,7 +20,7 @@ app.use(cors({ maxAge: 86400, credentials: true }));
 router.get('/', ctx => {
   const info = [
     'GET  / - repositories/:username',
-    'PATCH  / - repositoryTagAll',
+    'PUT  / - repositoryTagAll',
     'PATCH  / - repositoryTag',
     'DELETE  / - repositoryTag',
     'GET  / - repositoryTagSuggestion/:language'

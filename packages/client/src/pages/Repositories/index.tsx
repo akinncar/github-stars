@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { mutate as mutateGlobal } from 'swr';
 import { MdSearch } from 'react-icons/md';
@@ -41,6 +41,7 @@ const Repositories = () => {
   );
 
   async function fetchRepositoryFilter(text: string) {
+    console.log(currentPage);
     if (text === '') {
       const response = await api.get(
         `repositories/${username}?page=${currentPage}`
@@ -57,7 +58,7 @@ const Repositories = () => {
 
   const debouncedSearch = useCallback(
     debounce(text => fetchRepositoryFilter(text), 500),
-    []
+    [currentPage]
   );
 
   function search(text: string) {
@@ -101,10 +102,6 @@ const Repositories = () => {
   function handleRedirectToHome() {
     history.push(`/`);
   }
-
-  useEffect(() => {
-    if (username === null) handleRedirectToHome();
-  }, [username]);
 
   if (error) {
     return <Error>{error.response.data.message}</Error>;

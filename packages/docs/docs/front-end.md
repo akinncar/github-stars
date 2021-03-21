@@ -26,7 +26,7 @@ After configure the environment file, you can run dev script to start local serv
 yarn start
 ```
 
-## Step 3: Tests
+## Step 4: Tests
 
 You can also run unit tests with the watch command:
 
