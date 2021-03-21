@@ -40,7 +40,7 @@ const Home = () => {
           <TextInput
             placeholder="username"
             value={username}
-            onChange={e => setUsername(e.target.value)}
+            onChange={e => setUsername(e.target.value.trim())}
           />
         </div>
         <div>
