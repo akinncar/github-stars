@@ -1,33 +1,21 @@
-# Website
+# Documentation
 
-This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
+## Objective
 
-## Installation
+The objective of this package is to create a documentation of Github Stars that can show how to configure project to run locally, the official docs are available on https://github-stars-docs.vercel.app/
 
-```console
-yarn install
-```
+## Getting Started
 
-## Local Development
+You can see the full documentation to get this project in your machine and start to implement or test. The getting started are available on [Getting Started](https://github-stars-docs.vercel.app/docs/) session.
 
-```console
-yarn start
-```
+## Technologies
 
-This command starts a local development server and open up a browser window. Most changes are reflected live without having to restart the server.
+To develop this application, a monorepo was created with [Yarn Workspaces](https://classic.yarnpkg.com/en/docs/workspaces/) to manage the Server and Client sides. This technologies was picked thinking in all ecosystem of this project focused in Javascript/Typescript. This doccumentation was builded with [Docussaurus v2](https://v2.docusaurus.io/) and hosted by [Vercel](https://vercel.com/).
 
-## Build
+## License
 
-```console
-yarn build
-```
+The docs source code is made available under the [MIT license](LICENSE). Some of the dependencies are licensed differently, with the BSD license, for example.
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+## Contact
 
-## Deployment
-
-```console
-GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+Akinn Rosa - [Github](https://github.com/akinncar) - **[akinncar@hotmail.com](mailto:akinncar@hotmail.com)**

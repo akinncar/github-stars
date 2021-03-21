@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./packages/client/src/assets/images/header-docs.png" href="https://github-stars-akinncar.vercel.app/" width="650">
+  <img src="./packages/client/src/assets/images/header-docs.png" href="https://github-stars-akinncar.vercel.app/" width="560">
 </p>
 
 <p align="center">
@@ -26,34 +26,19 @@ The objective of this project is to create a web app that be possible to find st
 
 ## Documentation
 
-In the docs, you can see the [Installation](./packages/docs/Installation.md) session to get started this project in your local machine, and also see the endpoints in [Rest API](./packages/docs/RestAPI.md) session.
+The documentation was builded with [Docussaurus v2](https://v2.docusaurus.io/) and was made to can show developers how to get start with this project in local machine. Docs website also have an API Reference session containing all endpoints available on back-end. The website are [available here](https://github-stars-docs.vercel.app/).
 
 ## Technologies
 
-To develop this application, a monorepo was created with [Yarn Workspaces](https://classic.yarnpkg.com/en/docs/workspaces/) to manage the Server and Client sides.
+To develop this application, a monorepo was created with [Yarn Workspaces](https://classic.yarnpkg.com/en/docs/workspaces/) to manage the Server and Client sides. This technologies was picked thinking in all ecosystem of this project focused in Javascript/Typescript.
 
-### Core
+### Back-end
 
-- [Typescript](https://www.typescriptlang.org/)
-- [ESLint](https://eslint.org/)
-- [EditorConfig](https://editorconfig.org/)
-- [Jest](https://jestjs.io/)
+Production server are available in [this URL](https://github-stars-api-akinncar.herokuapp.com/). If you prefer too see all details, you can read full [README](./packages/client/README.md) from back-end package.
 
-### Server
+### Back-end
 
-- [Node](https://nodejs.org/en/)
-- [Koa](https://koajs.com/)
-- [MongoDB](https://www.mongodb.com/)
-- [Heroku](https://www.heroku.com/)
-
-### Client
-
-- [React](https://reactjs.org/)
-- [Webpack](https://webpack.js.org/)
-- [SWR](https://swr.vercel.app/)
-- [Styled Components](https://styled-components.com/)
-- [Prettier](https://prettier.io/)
-- [Vercel](https://vercel.com/)
+Production app are available in [this URL](https://github-stars-akinncar.vercel.app/). If you prefer too see all details, you can read full [README](./packages/server/README.md) from front-end package.
 
 ## License
 
