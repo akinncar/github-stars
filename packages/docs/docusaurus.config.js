@@ -61,7 +61,7 @@ module.exports = {
         specs: [
           {
             routePath: '/api/',
-            specUrl: 'http://localhost:3333/api-docs'
+            specUrl: 'https://github-stars-api-akinncar.herokuapp.com/api-docs'
           }
         ]
       }
