@@ -1,10 +1,16 @@
+import { InputHTMLAttributes } from 'react';
 import { Container, Input } from './styles';
 
-const TextInput = props => {
+interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
+  icon?: JSX.Element;
+  rest?: any;
+}
+
+const TextInput = ({ icon, ...rest }: TextInputProps) => {
   return (
     <Container>
-      {props.icon}
-      <Input type="text" {...props} />
+      {icon}
+      <Input type="text" {...rest} />
     </Container>
   );
 };

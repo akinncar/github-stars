@@ -10,7 +10,7 @@ export const Container = styled.div`
   background: ${props => props.theme.colors.background.primary};
 
   span {
-    margin: 16px 32px;
+    margin: 16px 64px;
     text-align: center;
     color: ${props => props.theme.colors.text.primary};
   }

@@ -10,7 +10,7 @@ export const ThemeContext = createContext<ThemeContextData>(
 );
 
 const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState(
+  const [theme, setTheme] = useState<string>(
     localStorage.getItem('@GithubStars:theme') || 'light'
   );
 

@@ -5,8 +5,13 @@ import ModalEditTags from '../ModalEditTags';
 import Tag from '../Tag';
 import { Container, TagContainer } from './styles';
 
-const RepositoryList = ({ repositories, updateTags }) => {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
+interface RepositoryListProps {
+  repositories: Array<RepositoryType>;
+  updateTags(fullName: string, tags: Array<string>): void;
+}
+
+const RepositoryList = ({ repositories, updateTags }: RepositoryListProps) => {
+  const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
   const [modalRepository, setModalRepository] = useState({} as RepositoryType);
 
   function handleOpenModal(repository) {

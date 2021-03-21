@@ -26,6 +26,14 @@ After configure the environment file, you can run dev script to start local serv
 yarn start
 ```
 
+## Step 3: Tests
+
+You can also run unit tests with the watch command:
+
+```shell
+yarn test
+```
+
 ## That's It!
 
 After run this command, you are able to access `http://localhost:3000` in your favorite browser.

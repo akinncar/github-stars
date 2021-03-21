@@ -18,18 +18,22 @@ describe('Repositories Page', () => {
       </MockedContainer>
     );
 
-    apiMock.onGet(`repositories/akinncar`).reply(200, [
-      {
-        id: 172547948,
-        node_id: 'MDEwOlJlcG9zaXRvcnkxNzI1NDc5NDg=',
-        name: 'create-react-native-module',
-        full_name: 'brodybits/create-react-native-module',
-        description: 'Package to create RN modules',
-        language: 'JavaScript',
-        tags_id: '604c13a7000a9904300ab822',
-        tags: []
-      }
-    ]);
+    apiMock.onGet(`repositories/akinncar?page=1`).reply(200, {
+      hasPreviousPage: false,
+      hasNextPage: false,
+      repositories: [
+        {
+          id: 172547948,
+          node_id: 'MDEwOlJlcG9zaXRvcnkxNzI1NDc5NDg=',
+          name: 'create-react-native-module',
+          full_name: 'brodybits/create-react-native-module',
+          description: 'Package to create RN modules',
+          language: 'JavaScript',
+          tags_id: '604c13a7000a9904300ab822',
+          tags: []
+        }
+      ]
+    });
 
     await waitFor(() => {
       expect(getByText('brodybits/create-react-native-module')).toBeTruthy();
@@ -49,19 +53,23 @@ describe('Repositories Page', () => {
       fireEvent.change(inputSearch, { target: { value: 'face' } });
     });
 
-    apiMock.onGet(`repositories/akinncar?tag=face`).reply(200, [
-      {
-        id: 135082477,
-        node_id: 'MDEwOlJlcG9zaXRvcnkxMzUwODI0Nzc=',
-        name: 'react',
-        full_name: 'facebook/react',
-        description: 'The React Facebook Project',
-        watchers_count: 706,
-        language: 'TypeScript',
-        tags_id: '604c13a7000a9904300ab822',
-        tags: ['facebook']
-      }
-    ]);
+    apiMock.onGet(`repositories/akinncar?tag=face`).reply(200, {
+      hasPreviousPage: false,
+      hasNextPage: false,
+      repositories: [
+        {
+          id: 135082477,
+          node_id: 'MDEwOlJlcG9zaXRvcnkxMzUwODI0Nzc=',
+          name: 'react',
+          full_name: 'facebook/react',
+          description: 'The React Facebook Project',
+          watchers_count: 706,
+          language: 'TypeScript',
+          tags_id: '604c13a7000a9904300ab822',
+          tags: ['facebook']
+        }
+      ]
+    });
 
     await waitFor(() => {
       expect(getByText('facebook/react')).toBeTruthy();
@@ -113,7 +121,7 @@ describe('Repositories Page', () => {
       expect(getByText('framework')).toBeTruthy();
     });
 
-    apiMock.onPatch(`repositoryTagAll`).reply(200, {
+    apiMock.onPut(`repositoryTagAll`).reply(200, {
       _id: '60513b24f39d7e495c62eb8b',
       tags: ['facebook', 'framework']
     });

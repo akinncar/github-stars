@@ -2,7 +2,17 @@ import { useRef } from 'react';
 import { useOutsideClick } from '../../hooks/useOutsideClick';
 import { Container, Content } from './styles';
 
-export default function Modal({ children, isOpen, onRequestClose }) {
+interface ModalProps {
+  children: JSX.Element;
+  isOpen: boolean;
+  onRequestClose(): void;
+}
+
+export default function Modal({
+  children,
+  isOpen,
+  onRequestClose
+}: ModalProps) {
   const containerRef = useRef(null);
 
   useOutsideClick(containerRef, () => {

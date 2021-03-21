@@ -47,20 +47,41 @@ router.get('/api-docs', apiDocs);
  *          schema:
  *             type: string
  *             example: akinncar
+ *        - in: query
+ *          name: page
+ *          schema:
+ *            type: integer
+ *            example: 1
  *     responses:
  *       200:
  *         description: Starred repositories List
  *         content:
  *           application/json:
  *             example:
- *             - tags:
- *                 - facebook
- *                 - tsc
- *               _id: 60567453f41e101f44a3d9ea
- *               username: akinncar
- *               full_name: facebook/docusaurus
- *               createdAt: '2021-03-20T22:16:51.355Z'
- *               updatedAt: '2021-03-20T22:29:43.757Z'
+ *               hasPreviousPage: false
+ *               hasNextPage: false
+ *               repositories:
+ *                 - id: 135082477
+ *                   node_id: MDEwOlJlcG9zaXRvcnkxMzUwODI0Nzc=
+ *                   name: react-div-100vh
+ *                   full_name: mvasin/react-div-100vh
+ *                   description: A workaround for the '100vh' issue in mobile browsers
+ *                   watchers_count: 706
+ *                   language: TypeScript
+ *                   tags_id: 604c13a7000a9904300ab822
+ *                   tags:
+ *                     - games
+ *                     - design
+ *                     - ui
+ *                     - ux
+ *                 - id: 172547948
+ *                   node_id: MDEwOlJlcG9zaXRvcnkxNzI1NDc5NDg=
+ *                   name: create-react-native-module
+ *                   full_name: brodybits/create-react-native-module
+ *                   description: null
+ *                   language: null
+ *                   tags_id: null
+ *                   tags: []
  *       404:
  *         description: Repositories not found
  *         content:
@@ -73,7 +94,7 @@ router.get('/repositories/:username', repositoriesGet);
 /**
  * @openapi
  * /repositoryTagAll:
- *   patch:
+ *   put:
  *     description: Update tags to a starred repository
  *     tags: [Repository Tags]
  *     summary: Update tags
@@ -108,8 +129,14 @@ router.get('/repositories/:username', repositoriesGet);
  *                  - framework
  *                  - graphql
  *                  - js
+ *       400:
+ *         description: Bad request
+ *         content:
+ *           application/json:
+ *             example:
+ *              Bad request
  */
-router.patch('/repositoryTagAll', repositoryTagAllPatch);
+router.put('/repositoryTagAll', repositoryTagAllPatch);
 
 /**
  * @openapi

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { MdAdd, MdClose } from 'react-icons/md';
 import { useTheme } from '../../hooks/useTheme';
 import { useFetch } from '../../hooks/useFetch';
+import { RepositoryType } from '../../types/RepositoryTypes';
 
 import Modal from '../Modal';
 import Button from '../Button';
@@ -16,24 +17,31 @@ import {
 } from './styles';
 import Loading from '../Loading';
 
+interface ModalEditTagsProps {
+  modalIsOpen: boolean;
+  repository: RepositoryType;
+  onSave(fullName: string, tags: Array<string>): void;
+  closeModal(): void;
+}
+
 export default function ModalEditTags({
   modalIsOpen,
   repository,
   onSave,
   closeModal
-}) {
+}: ModalEditTagsProps) {
   const { getCurrentTheme } = useTheme();
   const theme = getCurrentTheme();
 
-  const [fullName, setFullName] = useState('');
-  const [editedTags, setEditedTags] = useState([]);
-  const [newTag, setNewTag] = useState('');
-  const [language, setLanguage] = useState([]);
+  const [fullName, setFullName] = useState<string>('');
+  const [editedTags, setEditedTags] = useState<Array<string>>([]);
+  const [newTag, setNewTag] = useState<string>('');
+  const [language, setLanguage] = useState<string>('');
 
   const tags = repository.tags || [];
   const full_name = repository.full_name || '';
 
-  const { data: suggestedTags, error, mutate } = useFetch<Array<string>>(
+  const { data: suggestedTags } = useFetch<Array<string>>(
     `repositoryTagSuggestion/${language}`
   );
 
@@ -47,11 +55,11 @@ export default function ModalEditTags({
     closeModal();
   }
 
-  function handleAddTag(tagName) {
+  function handleAddTag(tagName: string) {
     setEditedTags([...editedTags, tagName]);
   }
 
-  function handleDeleteTag(tagName) {
+  function handleDeleteTag(tagName: string) {
     const newTagList = editedTags.filter(t => t !== tagName);
     setEditedTags(newTagList);
   }

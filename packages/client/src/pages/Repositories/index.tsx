@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { mutate as mutateGlobal } from 'swr';
 import { MdSearch } from 'react-icons/md';
@@ -14,10 +14,17 @@ import Loading from '../../components/Loading';
 import Logo from '../../components/Logo';
 import TextInput from '../../components/TextInput';
 import RepositoryList from '../../components/RepositoryList';
+import Paginator from '../../components/Paginator';
 import { Container, Header, SearchContainer } from './styles';
 
 interface ParamType {
   username: string;
+}
+
+interface ResponseType {
+  hasPreviousPage?: boolean;
+  hasNextPage?: boolean;
+  repositories: Array<RepositoryType>;
 }
 
 const Repositories = () => {
@@ -26,13 +33,22 @@ const Repositories = () => {
   const history = useHistory();
   const { username } = useParams<ParamType>();
 
-  const [searchText, setSearchText] = useState('');
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [searchText, setSearchText] = useState<string>('');
 
-  const { data, error, mutate } = useFetch<Array<RepositoryType>>(
-    `repositories/${username}`
+  const { data, error, mutate } = useFetch<ResponseType>(
+    `repositories/${username}?page=${currentPage}`
   );
 
-  async function fetchRepositoryFilter(text) {
+  async function fetchRepositoryFilter(text: string) {
+    if (text === '') {
+      const response = await api.get(
+        `repositories/${username}?page=${currentPage}`
+      );
+      mutate(response.data, false);
+      return;
+    }
+
     const response = await api.get(
       `repositories/${username}?tag=${text.trim()}`
     );
@@ -44,20 +60,20 @@ const Repositories = () => {
     []
   );
 
-  function search(text) {
+  function search(text: string) {
     setSearchText(text);
     debouncedSearch(text);
   }
 
   const handleChangeTags = useCallback(
     (full_name: string, tags: Array<string>) => {
-      api.patch(`repositoryTagAll`, {
+      api.put(`repositoryTagAll`, {
         username,
         full_name,
         tags
       });
 
-      const updatedRepositories = data.map(repository => {
+      const updatedRepositories = data.repositories.map(repository => {
         if (repository.full_name === full_name) {
           return { ...repository, tags: tags };
         }
@@ -65,7 +81,14 @@ const Repositories = () => {
         return repository;
       });
 
-      mutate(updatedRepositories, false);
+      mutate(
+        {
+          hasPreviousPage: data.hasPreviousPage,
+          hasNextPage: data.hasNextPage,
+          repositories: updatedRepositories
+        },
+        false
+      );
       mutateGlobal(`repositoryTagAll`, {
         username,
         full_name,
@@ -78,6 +101,10 @@ const Repositories = () => {
   function handleRedirectToHome() {
     history.push(`/`);
   }
+
+  useEffect(() => {
+    if (username === null) handleRedirectToHome();
+  }, [username]);
 
   if (error) {
     return <Error>{error.response.data.message}</Error>;
@@ -104,7 +131,18 @@ const Repositories = () => {
           onChange={e => search(e.target.value)}
         />
       </SearchContainer>
-      <RepositoryList repositories={data} updateTags={handleChangeTags} />
+      <RepositoryList
+        repositories={data.repositories}
+        updateTags={handleChangeTags}
+      />
+      {(data.hasPreviousPage || data.hasNextPage) && (
+        <Paginator
+          hasPrevious={data.hasPreviousPage}
+          hasNext={data.hasNextPage}
+          onClickPrevious={() => setCurrentPage(currentPage - 1)}
+          onClickNext={() => setCurrentPage(currentPage + 1)}
+        />
+      )}
     </Container>
   );
 };

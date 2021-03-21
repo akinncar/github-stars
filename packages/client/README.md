@@ -23,6 +23,8 @@ To develop this application, a monorepo was created with [Yarn Workspaces](https
 - [React 17](https://reactjs.org/)
 - [Webpack](https://webpack.js.org/)
 - [SWR](https://swr.vercel.app/)
+- [Jest](https://jestjs.io/)
+- [Testing Library](https://testing-library.com/)
 - [Styled Components](https://styled-components.com/)
 - [Prettier](https://prettier.io/)
 - [Vercel](https://vercel.com/)

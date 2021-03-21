@@ -12,7 +12,7 @@ import 'react-toggle/style.css';
 const Home = () => {
   const history = useHistory();
 
-  const [username, setUsername] = useState('');
+  const [username, setUsername] = useState<string>('');
 
   function handleRedirectToGithub() {
     window.open('https://github.com/akinncar/github-stars');
