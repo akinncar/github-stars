@@ -30,15 +30,11 @@ The documentation was builded with [Docussaurus v2](https://v2.docusaurus.io/) a
 
 ## Technologies
 
-To develop this application, a monorepo was created with [Yarn Workspaces](https://classic.yarnpkg.com/en/docs/workspaces/) to manage the Server and Client sides. This technologies was picked thinking in all ecosystem of this project focused in Javascript/Typescript.
+To develop this application, a monorepo was created with [Yarn Workspaces](https://classic.yarnpkg.com/en/docs/workspaces/) to manage the Server and Client sides. This technologies was picked thinking in all ecosystem of this project focused in Javascript/Typescript. Both packages are hosted and have an automated CI/CD. You can see all technologies used in README of each project. Also, you will see all Production URL's bellow:
 
-### Back-end
-
-Production server are available in [this URL](https://github-stars-api-akinncar.herokuapp.com/). If you prefer too see all details, you can read full [README](./packages/client/README.md) from back-end package.
-
-### Back-end
-
-Production app are available in [this URL](https://github-stars-akinncar.vercel.app/). If you prefer too see all details, you can read full [README](./packages/server/README.md) from front-end package.
+- [Production Back-end](https://github-stars-api-akinncar.herokuapp.com/) - [README](./packages/server/README.md)
+- [Production Front-end](https://github-stars-akinncar.vercel.app/) - [README](./packages/client/README.md)
+- [Production Documentation](https://github-stars-docs.vercel.app/) - [README](./packages/docs/README.md)
 
 ## License
 
