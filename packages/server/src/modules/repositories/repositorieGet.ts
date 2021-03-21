@@ -16,6 +16,42 @@ export const repositoriesGet = async (ctx: Context) => {
     return;
   }
 
+  ctx.body = [
+    {
+      id: 347493428,
+      node_id: 'MDEwOlJlcG9zaXRvcnkzNDc0OTM0Mjg=',
+      name: 'relay-first-try',
+      full_name: 'luiznasciment0/relay-first-try',
+      description: 'Aquela desc',
+      language: 'PHP',
+      tags_id: null,
+      tags: []
+    },
+    {
+      id: 135082477,
+      node_id: 'MDEwOlJlcG9zaXRvcnkxMzUwODI0Nzc=',
+      name: 'react-div-100vh',
+      full_name: 'mvasin/react-div-100vh',
+      description: "A workaround for the '100vh' issue in mobile browsers",
+      watchers_count: 706,
+      language: 'TypeScript',
+      tags_id: '604c13a7000a9904300ab822',
+      tags: ['games', 'design', 'ui', 'ux']
+    },
+    {
+      id: 172547948,
+      node_id: 'MDEwOlJlcG9zaXRvcnkxNzI1NDc5NDg=',
+      name: 'create-react-native-module',
+      full_name: 'brodybits/create-react-native-module',
+      description: null,
+      language: 'JavaScript',
+      tags_id: null,
+      tags: []
+    }
+  ];
+  ctx.status = 200;
+  return;
+
   const response = await fetch(
     `https://api.github.com/users/${username}/starred`
   );

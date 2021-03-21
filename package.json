@@ -8,6 +8,9 @@
     "server:deploy": "git subtree push --prefix packages/server heroku main",
     "client:dev": "yarn --cwd ./packages/client start",
     "client:build": "yarn --cwd ./packages/client build",
+    "docs:dev": "yarn --cwd ./packages/docs start",
+    "docs:build": "yarn --cwd ./packages/docs build",
+    "docs:deploy": "yarn --cwd ./packages/docs deploy",
     "test": "jest"
   },
   "workspaces": {

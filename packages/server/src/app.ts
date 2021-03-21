@@ -50,6 +50,23 @@ router.get('/api-docs', apiDocs);
  *     responses:
  *       200:
  *         description: Starred repositories List
+ *         content:
+ *           application/json:
+ *             example:
+ *             - tags:
+ *                 - facebook
+ *                 - tsc
+ *               _id: 60567453f41e101f44a3d9ea
+ *               username: akinncar
+ *               full_name: facebook/docusaurus
+ *               createdAt: '2021-03-20T22:16:51.355Z'
+ *               updatedAt: '2021-03-20T22:29:43.757Z'
+ *       404:
+ *         description: Repositories not found
+ *         content:
+ *           application/json:
+ *             example:
+ *              message: Not Found
  */
 router.get('/repositories/:username', repositoriesGet);
 
@@ -67,19 +84,30 @@ router.get('/repositories/:username', repositoriesGet);
  *             type: object
  *             properties:
  *               username:
+ *                 description: Github username
  *                 type: string
  *                 example: "akinncar"
  *               full_name:
+ *                 description: Repository full name
  *                 type: string
  *                 example: "facebook/relay"
  *               tags:
+ *                 description: All repository tags
  *                 type: array
  *                 items:
  *                   type: string
  *                 example: ["framework", "graphql", "js"]
  *     responses:
  *       200:
- *         description: Updated Tags
+ *           description: Edited tags
+ *           content:
+ *             application/json:
+ *               example:
+ *                _id: 60513b24f39d7e495c62eb8b
+ *                tags:
+ *                  - framework
+ *                  - graphql
+ *                  - js
  */
 router.patch('/repositoryTagAll', repositoryTagAllPatch);
 
@@ -97,19 +125,32 @@ router.patch('/repositoryTagAll', repositoryTagAllPatch);
  *             type: object
  *             properties:
  *               username:
+ *                 description: Github username
  *                 type: string
  *                 example: "akinncar"
  *               full_name:
+ *                 description: Repository full name
  *                 type: string
  *                 example: "facebook/docusaurus"
  *               tag:
+ *                 description: Tag to add
  *                 type: string
  *                 example: "javascript"
  *     responses:
  *       200:
- *         description: Updated Tags
+ *           description: Edited tags
+ *           content:
+ *             application/json:
+ *               example:
+ *                _id: 60513b24f39d7e495c62eb8b
+ *                tags:
+ *                  - javascript
  *       409:
  *         description: This tag already exists
+ *         content:
+ *           application/json:
+ *             example:
+ *              message: This tag already exists
  */
 router.patch('/repositoryTag', repositoryTagPatch);
 
@@ -137,9 +178,19 @@ router.patch('/repositoryTag', repositoryTagPatch);
  *             example: "javascript"
  *     responses:
  *       200:
- *         description: Tag Deleted
+ *           description: Edited tags
+ *           content:
+ *             application/json:
+ *               example:
+ *                _id: 60513b24f39d7e495c62eb8b
+ *                tags:
+ *                  - webpack
  *       404:
  *         description: Tag not found for this repository
+ *         content:
+ *           application/json:
+ *             example:
+ *              message: Tag not found for this repository
  */
 router.delete('/repositoryTag/:id/:tag', repositoryTagDelete);
 
@@ -160,7 +211,12 @@ router.delete('/repositoryTag/:id/:tag', repositoryTagDelete);
  *             example: TypeScript
  *     responses:
  *       200:
- *         description: Suggested tags
+ *           description: Suggested tags
+ *           content:
+ *             application/json:
+ *               example:
+ *               - koa
+ *               - tsc
  */
 router.get('/repositoryTagSuggestion/:language', repositoryTagSuggestionGet);
 
