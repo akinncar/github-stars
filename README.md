@@ -8,7 +8,7 @@
   </a>
 
   <a aria-label="heroku" href="https://github-stars-api-akinncar.herokuapp.com/" target="_blank">
-    <img alt="Deployed on Heroku" src="https://heroku-badge.herokuapp.com/?app=github-stars-api-akinncar" />
+    <img alt="Deployed on Heroku" src="https://pyheroku-badge.herokuapp.com/?app=github-stars-api-akinncar&path=/&style=flat" />
   </a>
 
   <a aria-label="vercel" href="https://github-stars-akinncar.vercel.app/" target="_blank">
