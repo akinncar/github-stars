@@ -43,6 +43,15 @@ export const Container = styled.table`
     color: ${props => props.theme.colors.text.link};
   }
 
+  td > a {
+    text-decoration: none;
+    color: ${props => props.theme.colors.text.primary};
+
+    &:hover {
+      color: ${props => props.theme.colors.text.link};
+    }
+  }
+
   @media (max-width: 768px) {
     tr th:nth-child(2),
     tr td:nth-child(2),

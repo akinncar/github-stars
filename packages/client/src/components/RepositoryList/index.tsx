@@ -42,7 +42,11 @@ const RepositoryList = ({ repositories, updateTags }: RepositoryListProps) => {
         {repositories.map(repository => {
           return (
             <tr key={repository.id}>
-              <td>{repository.full_name}</td>
+              <td>
+                <a href={repository.html_url} target="_blank">
+                  {repository.full_name}
+                </a>
+              </td>
               <td>{repository.description}</td>
               <td>{repository.language}</td>
               <td>
