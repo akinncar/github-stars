@@ -3,7 +3,13 @@ module.exports = {
     {
       type: 'category',
       label: 'Installation',
-      items: ['getting-started', 'back-end', 'front-end', 'docs']
+      items: [
+        'getting-started',
+        'back-end',
+        'back-end-docker',
+        'front-end',
+        'docs'
+      ]
     }
   ]
 };

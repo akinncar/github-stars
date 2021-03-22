@@ -1,0 +1,22 @@
+version: "3.7"
+ 
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: github-stars-api
+    volumes:
+      - ./src:/app/src
+    ports:
+      - "3333:3333"
+    command: yarn dev
+    links:
+      - database
+  database:
+    image: mongo
+    container_name: github-stars-db
+    ports:
+      - '27017:27017'
+    volumes:
+      - ./data/db:/data/db

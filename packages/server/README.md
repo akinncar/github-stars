@@ -18,14 +18,14 @@ To develop this application, a monorepo was created with [Yarn Workspaces](https
 - [ESLint](https://eslint.org/)
 - [EditorConfig](https://editorconfig.org/)
 
-### Client
+### Server
 
-- [React 17](https://reactjs.org/)
-- [Webpack](https://webpack.js.org/)
-- [SWR](https://swr.vercel.app/)
-- [Styled Components](https://styled-components.com/)
-- [Prettier](https://prettier.io/)
-- [Vercel](https://vercel.com/)
+- [Node](https://nodejs.org/en/)
+- [Koa](https://koajs.com/)
+- [MongoDB](https://www.mongodb.com/)
+- [Docker](https://www.docker.com/)
+- [Open API](https://github.com/Surnet/swagger-jsdoc)
+- [Heroku](https://www.heroku.com/)
 
 ## License
 

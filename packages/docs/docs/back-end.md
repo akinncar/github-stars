@@ -12,7 +12,7 @@ cd packages/server
 
 ## Step 2: Environment
 
-This API uses MongoDB for data storage, and you will need to add your personal database to run locally, and configure the server port (default `3333`). Create and `.env` file based on `.env.example`, and add this configurations:
+This API uses MongoDB for data storage, and you will need to add your personal database to run locally (If you prefer, you can see server and database configuration with docker in next session), and configure the server port (default `3333`). Create and `.env` file based on `.env.example`, and add this configurations:
 
 ```
 PORT=3333
