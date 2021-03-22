@@ -33,6 +33,8 @@ If you have permission problem, your also can try:
 sudo docker-compose up
 ```
 
+**OBS: The server communication with github API have a rate limit with maximum 60 requests per hour beacuse the request are not authenticated. If your requests broke by rate limit, you can wait or add token to Github Api requests**
+
 ## That's It!
 
 After run this command, you are able to access your server on `http://localhost:3333`.
