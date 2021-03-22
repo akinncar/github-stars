@@ -13,7 +13,12 @@ export const repositoryTagSuggestionGet = async (ctx: Context) => {
   const { language } = ctx.params;
 
   const repositories = await Repository.find({
-    language: { $regex: new RegExp('^' + language.toLowerCase(), 'i') }
+    language: {
+      $regex: new RegExp(
+        '^' + language.toLowerCase().replace(/[^a-zA-Z ]/g, ''),
+        'i'
+      )
+    }
   });
 
   if (!repositories) {
