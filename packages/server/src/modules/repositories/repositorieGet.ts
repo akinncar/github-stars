@@ -1,4 +1,5 @@
 import { Context } from 'koa';
+import { config } from '../../config';
 import Repository from './RepositoryModel';
 
 function getPages(link: string) {
@@ -6,6 +7,16 @@ function getPages(link: string) {
   const hasNextPage = link.indexOf(`rel="next"`) !== -1;
 
   return { hasPreviousPage, hasNextPage };
+}
+
+function getHeaders() {
+  if (config.GITHUB_ACCESS_TOKEN === '') return;
+
+  return {
+    headers: new Headers({
+      Authorization: `Bearer ${config.GITHUB_ACCESS_TOKEN}`
+    })
+  };
 }
 
 export const repositoriesGet = async (ctx: Context) => {
@@ -25,7 +36,8 @@ export const repositoriesGet = async (ctx: Context) => {
   }
 
   const response = await fetch(
-    `https://api.github.com/users/${username}/starred?page=${page}`
+    `https://api.github.com/users/${username}/starred?page=${page}`,
+    getHeaders()
   );
 
   const { hasPreviousPage, hasNextPage } = getPages(

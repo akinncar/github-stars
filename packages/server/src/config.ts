@@ -13,9 +13,11 @@ dotenvSafe.config({
 interface ConfigType {
   PORT: string | number;
   MONGO_URI: string;
+  GITHUB_ACCESS_TOKEN: string;
 }
 
 export const config: ConfigType = {
   PORT: process.env.PORT || 3333,
-  MONGO_URI: process.env.MONGO_URI || ''
+  MONGO_URI: process.env.MONGO_URI || '',
+  GITHUB_ACCESS_TOKEN: process.env.GITHUB_ACCESS_TOKEN || ''
 };
