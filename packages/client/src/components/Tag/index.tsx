@@ -1,6 +1,4 @@
-import { useTheme } from '../../hooks/useTheme';
-
-import { Container, CloseContainer } from './styles';
+import { Container, ActionContainer } from './styles';
 
 interface TagProps {
   children: string;
@@ -9,12 +7,10 @@ interface TagProps {
 }
 
 export default function Tag({ children, icon, onPressIcon }: TagProps) {
-  const { getCurrentTheme } = useTheme();
-
   return (
     <Container>
       <span>{children}</span>
-      {icon && <CloseContainer onClick={onPressIcon}>{icon}</CloseContainer>}
+      {icon && <ActionContainer onClick={onPressIcon}>{icon}</ActionContainer>}
     </Container>
   );
 }

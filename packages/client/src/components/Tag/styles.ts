@@ -17,7 +17,7 @@ export const Container = styled.div`
   }
 `;
 
-export const CloseContainer = styled.div`
+export const ActionContainer = styled.div`
   padding: 5px 9px;
   border-radius: 50%;
   background: ${props => props.theme.colors.tag.backgroundClose};

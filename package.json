@@ -4,13 +4,13 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "server:dev": "yarn --cwd ./packages/server dev",
+    "server:dev": "yarn workspace @github-stars/server dev",
     "server:deploy": "git subtree push --prefix packages/server heroku main",
-    "client:dev": "yarn --cwd ./packages/client start",
-    "client:build": "yarn --cwd ./packages/client build",
-    "docs:dev": "yarn --cwd ./packages/docs start",
-    "docs:build": "yarn --cwd ./packages/docs build",
-    "docs:deploy": "yarn --cwd ./packages/docs deploy",
+    "client:dev": "yarn workspace @github-stars/client start",
+    "client:build": "yarn workspace @github-stars/client build",
+    "docs:dev": "yarn workspace @github-stars/docs start",
+    "docs:build": "yarn workspace @github-stars/docs build",
+    "docs:deploy": "yarn workspace @github-stars/docs deploy",
     "test": "jest"
   },
   "workspaces": {

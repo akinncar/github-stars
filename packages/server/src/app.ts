@@ -3,7 +3,7 @@ import bodyParser from 'koa-bodyparser';
 import cors from '@koa/cors';
 import Router from '@koa/router';
 
-import { repositoriesGet } from './modules/repositories/repositorieGet';
+import { repositoriesGet } from './modules/repositories/repositoriesGet';
 import { repositoryTagAllPatch } from './modules/repositories/repositoryTagAllPatch';
 import { repositoryTagPatch } from './modules/repositories/repositoryTagPatch';
 import { repositoryTagDelete } from './modules/repositories/repositoryTagDelete';

@@ -41,7 +41,6 @@ const Repositories = () => {
   );
 
   async function fetchRepositoryFilter(text: string) {
-    console.log(currentPage);
     if (text === '') {
       const response = await api.get(
         `repositories/${username}?page=${currentPage}`
