@@ -22,15 +22,15 @@
 
 ## Objective
 
-The objective of this project is to create a web app that be possible to find starred repositories from a user and can manage retrieved repositories tags (i.e., add, edit, delete)
+As the name implies, GithubStars is a web app to list starred repositories from a user, and can manage retrieved repositories' tags (i.e., add, edit, delete, search). It is also a convienant way to look at all starred repos in a table format.
 
 ## Documentation
 
-The documentation was builded with [Docussaurus v2](https://v2.docusaurus.io/) and was made to can show developers how to get start with this project in local machine. Docs website also have an API Reference session containing all endpoints available on back-end. The website are [available here](https://github-stars-docs.vercel.app/).
+The documentation was built with [Docussaurus v2](https://v2.docusaurus.io/) to show developers how to start this project on a local machine. Docs also have an API Reference session containing all endpoints available on back-end. The website is [available here](https://github-stars-docs.vercel.app/).
 
 ## Technologies
 
-To develop this application, a monorepo was created with [Yarn Workspaces](https://classic.yarnpkg.com/en/docs/workspaces/) to manage the Server and Client sides. This technologies was picked thinking in all ecosystem of this project focused in Javascript/Typescript. Both packages are hosted and have an automated CI/CD. You can see all technologies used in README of each project. Also, you will see all Production URL's bellow:
+This is a monorepo created with [Yarn Workspaces](https://classic.yarnpkg.com/en/docs/workspaces/) to manage the Server and Client sides. These technologies were picked focusing on Javascript/Typescript. Both packages are hosted and have an automated CI/CD. You can see all technologies used in the README and package.json files of each project. Also, you will see all Production URLs bellow:
 
 - [Production Back-end](https://github-stars-api-akinncar.herokuapp.com/) - [README](./packages/server/README.md)
 - [Production Front-end](https://github-stars-akinncar.vercel.app/) - [README](./packages/client/README.md)
